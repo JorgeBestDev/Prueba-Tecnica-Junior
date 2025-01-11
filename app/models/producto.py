@@ -9,7 +9,7 @@ class Producto(db.Model):
     #llave foranea de la tabla categoria
     categoria_id = db.Column(db.Integer, db.ForeignKey('categoria.idCategoria', ondelete='CASCADE'), nullable=False)
     #relacion con la tabla categoria
-    categoria = db.relationship('Categoria', backref=db.backref('productos', lazy=True))
+    categoria = db.relationship('Categoria', backref=db.backref('producto', lazy=True))
 
     def __repr__(self):
         return f'<Producto {self.nombreProducto}>'
