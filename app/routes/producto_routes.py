@@ -11,6 +11,7 @@ def index():
         productos = db.session.query(Producto, Categoria).join(Categoria, Producto.categoria_id == Categoria.idCategoria).order_by(Producto.idProducto.desc()).all()
         categorias = Categoria.query.all()
         return render_template('index.html', producto=productos, categoria=categorias)
+    print('no esta pasando por el if')
 
 @bp.route('/accion_producto', methods=["POST"])
 def accion():
